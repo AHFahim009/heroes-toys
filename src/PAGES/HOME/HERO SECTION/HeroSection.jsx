@@ -2,7 +2,7 @@ import { heroData } from "../../../UTILITIES/data";
 
 const HeroSection = () => {
   return (
-    <section className=" py-8 grid grid-cols-1 md:grid-cols-2 gap-2 px-2">
+    <section className=" mt-4 grid grid-cols-1 md:grid-cols-2 gap-2 px-2">
       {/* text part */}
       <div className=" flex flex-col items-start justify-center gap-6">
         <p className="text-[2.5rem] lg:text-4xl px-4 lg:px-0 tracking-wide uppercase ">
@@ -30,7 +30,7 @@ const HeroSection = () => {
       <div className="py-2 flex-1 flex items-center relative">
         <img
           src="https://raw.githubusercontent.com/Vetrivel-VP/foodapp-yt-mar22/master/src/img/heroBg.png"
-          className=" ml-auto  h-full w-full lg:w-auto lg:h-650"
+          className=" ml-auto  h-full w-full lg:w-auto lg:h-[500px]"
           alt="hero-bg"
         />
 

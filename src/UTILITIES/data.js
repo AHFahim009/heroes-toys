@@ -24,3 +24,26 @@ export const heroData = [
       "https://w0.peakpx.com/wallpaper/377/342/HD-wallpaper-thor-avengers-endgame-thumbnail.jpg",
   },
 ];
+
+export const galleryImages = [
+  {
+    image:
+      "https://i.pinimg.com/550x/5d/d2/c8/5dd2c8f82ef46e0db3fe07a6e3285c2f.jpg",
+    id: 1,
+  },
+  {
+    image:
+      "https://i.pinimg.com/550x/5d/d2/c8/5dd2c8f82ef46e0db3fe07a6e3285c2f.jpg",
+    id: 2,
+  },
+  {
+    image:
+      "https://i.pinimg.com/550x/5d/d2/c8/5dd2c8f82ef46e0db3fe07a6e3285c2f.jpg",
+    id: 3,
+  },
+  {
+    image:
+      "https://i.pinimg.com/550x/5d/d2/c8/5dd2c8f82ef46e0db3fe07a6e3285c2f.jpg",
+    id: 4,
+  },
+];
