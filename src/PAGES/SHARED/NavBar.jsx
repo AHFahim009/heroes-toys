@@ -8,12 +8,12 @@ const NavBar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">All Toys</Link>
+        <Link to="/myToys">My Toys</Link>
       </li>
 
       <>
         <li>
-          <Link to="/bookings">Add a Toys</Link>
+          <Link to="/add">Add a Toys</Link>
         </li>
       </>
     </>

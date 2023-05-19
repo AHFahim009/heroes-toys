@@ -4,7 +4,7 @@ import RowGallery from "./RowGallery";
 const Gallery = () => {
   return (
     <div>
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-2 mt-8 flex items-center justify-between">
         <div className="">
           <p className="text-lg relative text-headingColor mx-2">
             Toys Gallery
