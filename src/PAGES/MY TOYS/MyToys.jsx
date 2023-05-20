@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import DisplayToys from "./DisplayToys";
+import UpdateModal from "./UpdateModal";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
+  const [uniqueId, setUniqueId] = useState(null);
+  console.log(uniqueId);
 
   // fetching my toys from server
   useEffect(() => {
@@ -13,11 +16,53 @@ const MyToys = () => {
       });
   }, []);
 
+  const handleDelete = (id) => {
+    console.log(id);
+    fetch(`http://localhost:5000/deleteToy/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div>
-      {myToys.map((toys) => (
-        <DisplayToys key={toys._id} toys={toys}></DisplayToys>
-      ))}
+      <div className="overflow-x-auto w-full ">
+        <table className="table w-full">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>#</th>
+              <th className="text-2xl">
+                Name/<span className="">Seller</span>
+              </th>
+              <th className="text-2xl">
+                Rating/<span className="">Price</span>
+              </th>
+              <th className="text-2xl">
+                Review/<span className="">Available</span>
+              </th>
+              <th>Update </th>
+              <th>Delete </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {myToys.map((toys, index) => (
+              <>
+                <DisplayToys
+                  key={toys._id}
+                  index={index}
+                  setUniqueId={setUniqueId}
+                  handleDelete={handleDelete}
+                  toys={toys}
+                />
+                <UpdateModal uniqueId={uniqueId} toys={toys} />
+              </>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

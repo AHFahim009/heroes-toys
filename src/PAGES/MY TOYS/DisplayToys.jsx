@@ -1,27 +1,56 @@
-const DisplayToys = ({ toys }) => {
-  const { photo, name, seller, price, description, rating } = toys;
-  return (
-    <div>
-      <div className="card lg:card-side bg-gray-100 flex ">
-        <figure className="w-full lg:w-[50%]  rounded-lg ">
-          <img className="object-cover rounded-xl" src={photo} alt="Album" />
-        </figure>
-        <div className="card-body w-full lg:w-[50%] ">
-          <div className="divide-y-2 divide-red-500 space-y-2">
-            <h2 className="card-title text-pink-800">Name: {name}</h2>
-            <p className="">Seller Name: {seller}</p>
-            <p className="">Price: {price}</p>
-            <p className="">Rating: {rating}</p>
-            <p className="">Description: {description}</p>
-          </div>
+const DisplayToys = ({ toys, index, setUniqueId, handleDelete }) => {
+  const { _id, photo, name, seller, price, description, quantity, rating } =
+    toys;
 
-          <div className="card-actions justify-around mt-3">
-            <button className="btn btn-outline">Update</button>
-            <button className="btn btn-outline">Delete</button>
+  return (
+    <>
+      {/* row 1 */}
+      <tr>
+        <th>
+          <label>
+            <button>{index + 1}</button>
+          </label>
+        </th>
+        <td>
+          <div className="flex items-center space-x-3">
+            <div className="avatar">
+              <div className="mask mask-squircle w-20 h-20">
+                <img src={photo} alt="Avatar Tailwind CSS Component" />
+              </div>
+            </div>
+            <div>
+              <div className="font-bold">{name}</div>
+              <div className="text-sm opacity-50">Seller: {seller}</div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </td>
+        <td>
+          {rating} start
+          <br />
+          <span className="badge badge-ghost badge-sm">${price}</span>
+        </td>
+        <td>
+          love it love it
+          <br />
+          <span className="badge badge-ghost badge-sm">
+            {quantity} piece only order fast
+          </span>
+        </td>
+        <th>
+          <label onClick={() => setUniqueId(_id)} htmlFor="my-modal-6">
+            Update
+          </label>
+        </th>
+        <th>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Delete
+          </button>
+        </th>
+      </tr>
+    </>
   );
 };
 
