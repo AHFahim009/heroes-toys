@@ -1,6 +1,7 @@
+// eslint-disable-next-line react/prop-types
 const AllToysRow = ({ toys, index }) => {
-  const { _id, photo, name, seller, price, quantity, rating, subCategory } =
-    toys;
+  // eslint-disable-next-line react/prop-types
+  const { name, seller, price, quantity, rating, subCategory } = toys;
 
   return (
     <>

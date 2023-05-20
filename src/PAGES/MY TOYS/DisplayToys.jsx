@@ -1,6 +1,7 @@
+// eslint-disable-next-line react/prop-types
 const DisplayToys = ({ toys, index, setUniqueId, handleDelete }) => {
-  const { _id, photo, name, seller, price, description, quantity, rating } =
-    toys;
+  // eslint-disable-next-line react/prop-types
+  const { _id, photo, name, seller, price, quantity, rating } = toys;
 
   return (
     <>
