@@ -3,6 +3,7 @@ import Layout from "../LAYOUT/Layout";
 import Home from "../PAGES/HOME/Home";
 import AddToys from "../PAGES/ADD TOYS/AddToys";
 import MyToys from "../PAGES/MY TOYS/MyToys";
+import AllToys from "../PAGES/ALL_TOYS/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/myToys",
         element: <MyToys></MyToys>,
+      },
+      {
+        path: "/allToys",
+        element: <AllToys></AllToys>,
       },
     ],
   },

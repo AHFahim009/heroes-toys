@@ -10,6 +10,9 @@ const NavBar = () => {
       <li>
         <Link to="/myToys">My Toys</Link>
       </li>
+      <li>
+        <Link to="/allToys">All Toys</Link>
+      </li>
 
       <>
         <li>

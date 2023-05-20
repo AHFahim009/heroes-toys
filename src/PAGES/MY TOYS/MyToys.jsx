@@ -26,7 +26,7 @@ const MyToys = () => {
   };
 
   return (
-    <div>
+    <div className="lg:mt-8">
       <div className="overflow-x-auto w-full ">
         <table className="table w-full">
           {/* head */}
