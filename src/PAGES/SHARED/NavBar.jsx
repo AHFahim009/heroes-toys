@@ -31,6 +31,9 @@ const NavBar = () => {
         <li>
           <Link to="/add">Add a Toys</Link>
         </li>
+        <li>
+          <Link to="/blogs">Blogs</Link>
+        </li>
         <li className="">
           <Link onClick={handleLogout} className="block lg:hidden" to="/add">
             logout
@@ -67,7 +70,7 @@ const NavBar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl  ">
+        <Link to="/" className=" h-12 normal-case text-xl  ">
           <img
             className="h-full w-full"
             src="https://w7.pngwing.com/pngs/188/758/png-transparent-iron-man-s-armor-edwin-jarvis-thor-captain-america-iron-man.png"

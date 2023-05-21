@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const DisplayDetails = () => {
+  useEffect(() => {
+    document.title = "Heroes - Details";
+  }, []);
   const subDetails = useLoaderData();
   const { photo, name, seller, price, rating, quantity, description } =
     subDetails;

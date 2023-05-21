@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../CONTEXT-PROVIDER/AuthProvider";
+import Spinner from "../PAGES/SHARED/Spinner";
 
 // eslint-disable-next-line react/prop-types
 const PrivetRoute = ({ children }) => {
@@ -10,7 +11,7 @@ const PrivetRoute = ({ children }) => {
   //------------------------------------------------------------
 
   if (loading) {
-    return <h1>loading</h1>;
+    return <Spinner></Spinner>;
   }
 
   if (user) {

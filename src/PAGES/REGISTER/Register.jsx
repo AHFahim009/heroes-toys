@@ -1,8 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../CONTEXT-PROVIDER/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+  useEffect(() => {
+    document.title = "Heroes - Register";
+  }, []);
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const { createUser, updateUserData } = useContext(AuthContext);
 
   const handleRegister = (event) => {
@@ -13,12 +19,17 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password, photo);
+    if (password.length < 6) {
+      setError("Password must be minimum 6 characters");
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         updateUserData(result.user, name, photo);
         console.log(user);
+        setSuccess(user);
       })
       .catch((error) => {
         console.log(error);
@@ -98,8 +109,8 @@ const Register = () => {
                   required
                 />
                 {/* display error success massage */}
-                <p className="text-red-500 text-xs italic"></p>
-                <p className="text-red-500 text-xs italic"></p>
+                <p className="text-red-500 text-xs italic">{error}</p>
+                <p className="text-red-500 text-xs italic">{success}</p>
               </div>
               <div className="flex flex-col-reverse gap-2 lg:flex-row  items-center justify-between">
                 <button
@@ -109,7 +120,7 @@ const Register = () => {
                   Register
                 </button>
                 <p
-                  className="inline-block align-baseline font-bold text-sm t"
+                  className="inline-block align-baseline font-bold text-sm tracking-widest"
                   href="#"
                 >
                   Already have an account ? Please

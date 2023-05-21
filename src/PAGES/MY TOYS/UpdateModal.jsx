@@ -18,13 +18,16 @@ const UpdateModal = ({ toys, uniqueId }) => {
     };
     console.log(updateData);
     //update toy
-    fetch(` http://localhost:5000/updateJob/${uniqueId}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateData),
-    })
+    fetch(
+      ` https://11-assignment-server-site.vercel.app/updateJob/${uniqueId}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

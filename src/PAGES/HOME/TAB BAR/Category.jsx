@@ -11,7 +11,7 @@ const Category = () => {
   // console.log(subCategory);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys/${activeTab}`)
+    fetch(`https://11-assignment-server-site.vercel.app/allToys/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setSubCategory(data);

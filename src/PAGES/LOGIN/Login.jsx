@@ -1,9 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../CONTEXT-PROVIDER/AuthProvider";
 import SocialLogin from "../SHARED/SOCIAL_LOGIN/SocialLogIn";
 
 const Login = () => {
+  const [error, setError] = useState("");
+  useEffect(() => {
+    document.title = "Heroes - login";
+  }, []);
   //---------------
   const location = useLocation();
   const navigate = useNavigate();
@@ -27,6 +31,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   };
 
@@ -72,7 +77,7 @@ const Login = () => {
                   placeholder="password"
                   required
                 />
-                <p className="text-red-500 text-xl italic"></p>
+                <p className="text-red-500 text-xl italic">{error}</p>
               </div>
               <div className="flex flex-col-reverse gap-2 lg:flex-row items-center justify-between">
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">

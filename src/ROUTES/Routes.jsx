@@ -8,11 +8,14 @@ import Login from "../PAGES/LOGIN/Login";
 import Register from "../PAGES/REGISTER/Register";
 import PrivetRoute from "./PrivetRoute";
 import DisplayDetails from "../PAGES/HOME/TAB BAR/DisplayDetails";
+import ErrorPage from "../PAGES/ErrorPage";
+import Blogs from "../PAGES/BLOG_SECTION/Blogs";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -20,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/add",
-        element: <AddToys></AddToys>,
+        element: (
+          <PrivetRoute>
+            <AddToys></AddToys>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/myToys",
@@ -50,7 +57,13 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/idToys/${params.id}`),
+          fetch(
+            `https://11-assignment-server-site.vercel.app/idToys/${params.id}`
+          ),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
     ],
   },

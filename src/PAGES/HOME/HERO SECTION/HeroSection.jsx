@@ -20,10 +20,11 @@ const HeroSection = () => {
         </p>
 
         <p className=" px-4 lg:px-0 text-center md:text-left md:w-[80%]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit
-          eaque fugit distinctio est nam voluptatum architecto, porro iusto
-          deserunt recusandae ipsa minus eos sunt, dolores illo repellat facere
-          suscipit!
+          Are you ready to embark on an extraordinary adventure into the world
+          of superheroes? At Amazing Heroes, we are passionate about everything
+          related to superheroes and their incredible abilities. From the iconic
+          characters to their awe-inspiring stories, we celebrate the power,
+          bravery, and heroism they represent!
         </p>
 
         <button type="button" className=" btn-orange">

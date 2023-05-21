@@ -5,13 +5,16 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../CONTEXT-PROVIDER/AuthProvider";
 
 const MyToys = () => {
+  useEffect(() => {
+    document.title = "Heroes - MyToys";
+  }, []);
   const [myToys, setMyToys] = useState([]);
   const [uniqueId, setUniqueId] = useState(null);
   const { user } = useContext(AuthContext);
   console.log(uniqueId);
   // fetching my toys from server
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user.email}`)
+    fetch(`https://11-assignment-server-site.vercel.app/myToys/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -33,7 +36,7 @@ const MyToys = () => {
       // delete data from server
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteToy/${id}`, {
+        fetch(`https://11-assignment-server-site.vercel.app/deleteToy/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import AllToysRow from "./AllToysRow";
 
 const AllToys = () => {
+  useEffect(() => {
+    document.title = "Heroes - All Toys";
+  }, []);
   const [allToys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState("");
   // renders all toys form server
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://11-assignment-server-site.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);
@@ -14,7 +17,9 @@ const AllToys = () => {
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/searchByName/${searchText}`)
+    fetch(
+      `https://11-assignment-server-site.vercel.app/searchByName/${searchText}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);
