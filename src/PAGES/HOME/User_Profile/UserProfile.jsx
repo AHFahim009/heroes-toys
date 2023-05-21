@@ -4,8 +4,9 @@ import { AuthContext } from "../../../CONTEXT-PROVIDER/AuthProvider";
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div>
+    <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
       <div className="flex flex-col items-center justify-center py-16 bg-gray-100">
+        <h1 className="text-center text-3xl mb-3">Profile</h1>
         <div className=" max-w-xl w-full px-4">
           <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8">
             <div className="flex items-center mb-6">

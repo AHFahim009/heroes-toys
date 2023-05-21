@@ -3,7 +3,11 @@ import RowGallery from "./RowGallery";
 
 const Gallery = () => {
   return (
-    <div>
+    <div
+      data-aos="fade-right"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    >
       <div className="mb-2 mt-8 flex items-center justify-between">
         <div className="">
           <p className="text-lg relative text-headingColor mx-2">

@@ -4,7 +4,12 @@ const HeroSection = () => {
   return (
     <section className=" mt-8 grid grid-cols-1 md:grid-cols-2 gap-2 px-2">
       {/* text part */}
-      <div className=" flex flex-col items-start justify-center gap-6">
+      <div
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+        className=" flex flex-col items-start justify-center gap-6"
+      >
         <p className="text-[2.5rem] lg:text-4xl px-4 lg:px-0 tracking-wide uppercase ">
           Unleash your imagination <br />
           <span className="text-5xl">&</span>
@@ -27,7 +32,12 @@ const HeroSection = () => {
       </div>
 
       {/* images part */}
-      <div className="py-2 flex-1 flex items-center relative">
+      <div
+        className="py-2 flex-1 flex items-center relative"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+      >
         <img
           src="https://raw.githubusercontent.com/Vetrivel-VP/foodapp-yt-mar22/master/src/img/heroBg.png"
           className=" ml-auto  h-full w-full lg:w-auto lg:h-[500px]"

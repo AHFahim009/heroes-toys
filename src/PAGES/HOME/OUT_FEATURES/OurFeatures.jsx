@@ -1,6 +1,6 @@
 const OurFeatures = () => {
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
       <h1 className="text-center text-3xl">Our Services</h1>
       <div className=" mx-auto grid  lg:grid-cols-2 py-8 justify-center  items-center ">
         <img src="https://st2.depositphotos.com/2059749/7420/i/450/depositphotos_74203737-stock-photo-3d-man-with-our-services.jpg" />

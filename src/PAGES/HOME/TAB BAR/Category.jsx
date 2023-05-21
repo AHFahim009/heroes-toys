@@ -46,7 +46,12 @@ const Category = () => {
                   <>
                     <div key={sub._id}>
                       <div className="card h-[540px]  glass">
-                        <figure className=" w-full lg:w-80 mt-2 px-2   ">
+                        <figure
+                          className=" w-full lg:w-80 mt-2 px-2"
+                          data-aos="zoom-in"
+                          data-aos-easing="linear"
+                          data-aos-duration="1500"
+                        >
                           <img
                             className="rounded-xl h-full w-full "
                             src={sub.photo}
@@ -54,7 +59,7 @@ const Category = () => {
                           />
                         </figure>
                         <div className="card-body ">
-                          <h2 className="card-title">Name: {sub.name} </h2>
+                          <h2 className="card-title">{sub.name} </h2>
                           <p>Price : {sub.price}</p>
                           <p>Rating: {sub.rating}</p>
                           <div className="card-actions justify-start">
@@ -79,7 +84,12 @@ const Category = () => {
                   <>
                     <div key={sub._id}>
                       <div className="card h-[540px]  glass">
-                        <figure className=" w-full lg:w-80 mt-2 px-2   ">
+                        <figure
+                          className=" w-full lg:w-80 mt-2 px-2"
+                          data-aos="zoom-in"
+                          data-aos-easing="linear"
+                          data-aos-duration="1500"
+                        >
                           <img
                             className="rounded-xl h-full w-full "
                             src={sub.photo}
@@ -87,7 +97,7 @@ const Category = () => {
                           />
                         </figure>
                         <div className="card-body ">
-                          <h2 className="card-title">Name: {sub.name} </h2>
+                          <h2 className="card-title">{sub.name} </h2>
                           <p>Price : {sub.price}</p>
                           <p>Rating: {sub.rating}</p>
                           <div className="card-actions justify-start">
@@ -112,7 +122,12 @@ const Category = () => {
                   <>
                     <div key={sub._id}>
                       <div className="card h-[540px]  glass">
-                        <figure className=" w-full lg:w-80 mt-2 px-2   ">
+                        <figure
+                          className=" w-full lg:w-80 mt-2 px-2"
+                          data-aos="zoom-in"
+                          data-aos-easing="linear"
+                          data-aos-duration="1500"
+                        >
                           <img
                             className="rounded-xl h-full w-full "
                             src={sub.photo}
@@ -120,7 +135,7 @@ const Category = () => {
                           />
                         </figure>
                         <div className="card-body ">
-                          <h2 className="card-title">Name: {sub.name} </h2>
+                          <h2 className="card-title">{sub.name} </h2>
                           <p>Price : {sub.price}</p>
                           <p>Rating: {sub.rating}</p>
                           <div className="card-actions justify-start">
