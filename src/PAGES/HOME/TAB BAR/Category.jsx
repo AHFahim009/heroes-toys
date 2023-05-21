@@ -42,7 +42,7 @@ const Category = () => {
             {/* marvel */}
             <TabPanel>
               <div className="flex flex-col lg:flex-row items-center gap-10 justify-center">
-                {subCategory.slice(0, 2).map((sub) => (
+                {subCategory.slice(0, 3).map((sub) => (
                   <>
                     <div key={sub._id}>
                       <div className="card h-[540px]  glass">
@@ -75,7 +75,7 @@ const Category = () => {
             {/* dc */}
             <TabPanel>
               <div className="flex flex-col lg:flex-row items-center gap-10 justify-center">
-                {subCategory.slice(0, 2).map((sub) => (
+                {subCategory.slice(0, 3).map((sub) => (
                   <>
                     <div key={sub._id}>
                       <div className="card h-[540px]  glass">
@@ -108,7 +108,7 @@ const Category = () => {
             {/* disney */}
             <TabPanel>
               <div className="flex flex-col lg:flex-row items-center gap-10 justify-center">
-                {subCategory.slice(0, 2).map((sub) => (
+                {subCategory.slice(0, 3).map((sub) => (
                   <>
                     <div key={sub._id}>
                       <div className="card h-[540px]  glass">

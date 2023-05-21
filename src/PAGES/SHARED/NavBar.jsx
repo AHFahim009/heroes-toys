@@ -67,12 +67,14 @@ const NavBar = () => {
             {navItems}
           </ul>
         </div>
-        <Link
-          to="/"
-          className="btn btn-ghost normal-case text-xl h-[54.78px] lg:px-0 "
-        >
-          Webpage logo
+        <Link to="/" className="btn btn-ghost normal-case text-xl  ">
+          <img
+            className="h-full w-full"
+            src="https://w7.pngwing.com/pngs/188/758/png-transparent-iron-man-s-armor-edwin-jarvis-thor-captain-america-iron-man.png"
+            alt=""
+          />
         </Link>
+        Heroes
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 ">{navItems}</ul>

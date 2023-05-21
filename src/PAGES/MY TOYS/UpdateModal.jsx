@@ -1,3 +1,6 @@
+import Swal from "sweetalert2";
+
+// eslint-disable-next-line react/prop-types
 const UpdateModal = ({ toys, uniqueId }) => {
   const { _id, price, quantity, rating } = toys || {};
   console.log(toys);
@@ -23,7 +26,17 @@ const UpdateModal = ({ toys, uniqueId }) => {
       body: JSON.stringify(updateData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee Updated successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
 
   return (

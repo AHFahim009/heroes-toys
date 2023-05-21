@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import DisplayToys from "./DisplayToys";
 import UpdateModal from "./UpdateModal";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   const [uniqueId, setUniqueId] = useState(null);
   console.log(uniqueId);
-
   // fetching my toys from server
   useEffect(() => {
     fetch("http://localhost:5000/myToys/princess@gmail.com")
@@ -16,13 +16,33 @@ const MyToys = () => {
       });
   }, []);
 
+  // delete
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/deleteToy/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+
+      // delete data from server
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/deleteToy/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
   };
 
   return (

@@ -6,7 +6,7 @@ const DisplayDetails = () => {
     subDetails;
   return (
     <div className="card lg:card-side  py-8 ">
-      <figure className="w-full lg:w-1/2 h-full lg:h-[500px]">
+      <figure className="w-full lg:w-1/2 h-full lg:h-96">
         <img src={photo} className="h-full object-fill rounded-xl" />
       </figure>
       <div className="card-body w-full lg:w-1/2">

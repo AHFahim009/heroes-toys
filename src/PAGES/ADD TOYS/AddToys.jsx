@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddToys = () => {
   const handleSubmitForm = (event) => {
     event.preventDefault();
@@ -33,7 +35,17 @@ const AddToys = () => {
       body: JSON.stringify(toyData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Your Toys added successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
 
   return (
