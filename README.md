@@ -1,4 +1,6 @@
-## Live server Link [ Heros: "https://heroes-toys.web.app/"]
+## Live server Link: Heros
+
+"https://heroes-toys.web.app/"
 
 ## A comprehensive database of superheroes:
 
