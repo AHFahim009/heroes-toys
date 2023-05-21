@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import "react-tabs/style/react-tabs.css";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
+import { Link } from "react-router-dom";
+
 const Category = () => {
   const [subCategory, setSubCategory] = useState([]);
-  const [activeTab, setActiveTab] = useState("marvel");
+  const [activeTab, setActiveTab] = useState("");
+
   // console.log(subCategory);
 
   useEffect(() => {
@@ -29,17 +32,19 @@ const Category = () => {
           <h1 className="text-4xl text-center uppercase">
             SuperHero Categories
           </h1>
+
           <Tabs>
             <TabList>
               <Tab onClick={() => handleTab("marvel")}>Marvel</Tab>
               <Tab onClick={() => handleTab("dc")}>DC</Tab>
               <Tab onClick={() => handleTab("disney")}>Disney</Tab>
             </TabList>
+            {/* marvel */}
             <TabPanel>
               <div className="flex flex-col lg:flex-row items-center gap-10 justify-center">
                 {subCategory.slice(0, 2).map((sub) => (
                   <>
-                    <div className="">
+                    <div key={sub._id}>
                       <div className="card h-[540px]  glass">
                         <figure className=" w-full lg:w-80 mt-2 px-2   ">
                           <img
@@ -53,9 +58,12 @@ const Category = () => {
                           <p>Price : {sub.price}</p>
                           <p>Rating: {sub.rating}</p>
                           <div className="card-actions justify-start">
-                            <button className="btn btn-outline">
+                            <Link
+                              to={`/details/${sub._id}`}
+                              className="btn btn-outline"
+                            >
                               View Details
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -69,7 +77,7 @@ const Category = () => {
               <div className="flex flex-col lg:flex-row items-center gap-10 justify-center">
                 {subCategory.slice(0, 2).map((sub) => (
                   <>
-                    <div className="">
+                    <div key={sub._id}>
                       <div className="card h-[540px]  glass">
                         <figure className=" w-full lg:w-80 mt-2 px-2   ">
                           <img
@@ -83,9 +91,12 @@ const Category = () => {
                           <p>Price : {sub.price}</p>
                           <p>Rating: {sub.rating}</p>
                           <div className="card-actions justify-start">
-                            <button className="btn btn-outline">
+                            <Link
+                              to={`/details/${sub._id}`}
+                              className="btn btn-outline"
+                            >
                               View Details
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -94,11 +105,12 @@ const Category = () => {
                 ))}
               </div>
             </TabPanel>
+            {/* disney */}
             <TabPanel>
               <div className="flex flex-col lg:flex-row items-center gap-10 justify-center">
                 {subCategory.slice(0, 2).map((sub) => (
                   <>
-                    <div className="">
+                    <div key={sub._id}>
                       <div className="card h-[540px]  glass">
                         <figure className=" w-full lg:w-80 mt-2 px-2   ">
                           <img
@@ -112,9 +124,12 @@ const Category = () => {
                           <p>Price : {sub.price}</p>
                           <p>Rating: {sub.rating}</p>
                           <div className="card-actions justify-start">
-                            <button className="btn btn-outline">
+                            <Link
+                              to={`/details/${sub._id}`}
+                              className="btn btn-outline"
+                            >
                               View Details
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>

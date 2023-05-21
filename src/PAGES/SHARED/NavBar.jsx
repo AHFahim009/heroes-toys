@@ -1,6 +1,19 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../CONTEXT-PROVIDER/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+
+      .catch((error) => console.log(error));
+  };
+
   // nav items variable
   const navItems = (
     <>
@@ -17,6 +30,11 @@ const NavBar = () => {
       <>
         <li>
           <Link to="/add">Add a Toys</Link>
+        </li>
+        <li className="">
+          <Link onClick={handleLogout} className="block lg:hidden" to="/add">
+            logout
+          </Link>
         </li>
       </>
     </>
@@ -56,11 +74,35 @@ const NavBar = () => {
           Webpage logo
         </Link>
       </div>
-      <div className="navbar-center hidden md:flex">
+      <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 ">{navItems}</ul>
       </div>
-      <div className="navbar-end">
-        <Link className=" "> Login</Link>
+      <div className="navbar-end gap-5">
+        <div className="">
+          {user && user.photoURL ? (
+            <img
+              className="h-[50px]  w-[50px]  rounded-full } "
+              src={user?.photoURL}
+              alt="User photo"
+              title={user?.displayName}
+            />
+          ) : (
+            <p>{user?.displayName}</p>
+          )}
+        </div>
+        {user ? (
+          <Link
+            onClick={handleLogout}
+            to="/login"
+            className=" hidden lg:block "
+          >
+            Logout
+          </Link>
+        ) : (
+          <Link to="/login" className=" ">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

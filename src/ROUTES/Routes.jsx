@@ -4,6 +4,10 @@ import Home from "../PAGES/HOME/Home";
 import AddToys from "../PAGES/ADD TOYS/AddToys";
 import MyToys from "../PAGES/MY TOYS/MyToys";
 import AllToys from "../PAGES/ALL_TOYS/AllToys";
+import Login from "../PAGES/LOGIN/Login";
+import Register from "../PAGES/REGISTER/Register";
+import PrivetRoute from "./PrivetRoute";
+import DisplayDetails from "../PAGES/HOME/TAB BAR/DisplayDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +24,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/myToys",
-        element: <MyToys></MyToys>,
+        element: (
+          <PrivetRoute>
+            <MyToys></MyToys>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/details/:id",
+        element: <DisplayDetails></DisplayDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/idToys/${params.id}`),
       },
     ],
   },
