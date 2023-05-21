@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DisplayToys from "./DisplayToys";
 import UpdateModal from "./UpdateModal";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../CONTEXT-PROVIDER/AuthProvider";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   const [uniqueId, setUniqueId] = useState(null);
+  const { user } = useContext(AuthContext);
   console.log(uniqueId);
   // fetching my toys from server
   useEffect(() => {
-    fetch("http://localhost:5000/myToys/princess@gmail.com")
+    fetch(`http://localhost:5000/myToys/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
       });
-  }, []);
+  }, [user]);
 
   // delete
   const handleDelete = (id) => {

@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../CONTEXT-PROVIDER/AuthProvider";
 
 const AddToys = () => {
+  const { user } = useContext(AuthContext);
   const handleSubmitForm = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -97,6 +100,7 @@ const AddToys = () => {
                 className="w-full border border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 type="email"
                 name="email"
+                value={user.email}
                 placeholder="Enter seller email"
               />
             </div>
