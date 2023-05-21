@@ -43,7 +43,7 @@ const MyToys = () => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
             }
           });
       }

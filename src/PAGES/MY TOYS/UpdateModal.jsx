@@ -34,7 +34,7 @@ const UpdateModal = ({ toys, uniqueId }) => {
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
-            text: "Coffee Updated successfully",
+            text: "Your Toys Updated successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
