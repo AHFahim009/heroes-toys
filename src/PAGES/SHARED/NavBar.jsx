@@ -34,10 +34,14 @@ const NavBar = () => {
         <li>
           <Link to="/blogs">Blogs</Link>
         </li>
-        <li className="">
-          <Link onClick={handleLogout} className="block lg:hidden" to="/add">
-            logout
-          </Link>
+        <li>
+          {user ? (
+            <Link onClick={handleLogout} className="block lg:hidden" to="/add">
+              logout
+            </Link>
+          ) : (
+            ""
+          )}
         </li>
       </>
     </>
