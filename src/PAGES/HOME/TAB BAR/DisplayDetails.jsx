@@ -5,7 +5,7 @@ const DisplayDetails = () => {
   const { photo, name, seller, price, rating, quantity, description } =
     subDetails;
   return (
-    <div className="card lg:card-side  py-12 ">
+    <div className="card lg:card-side  py-8 ">
       <figure className="w-full lg:w-1/2 h-full lg:h-[500px]">
         <img src={photo} className="h-full object-fill rounded-xl" />
       </figure>

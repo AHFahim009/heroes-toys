@@ -9,8 +9,6 @@ const PrivetRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   //------------------------------------------------------------
 
-  //----------------------------
-
   if (loading) {
     return <h1>loading</h1>;
   }
